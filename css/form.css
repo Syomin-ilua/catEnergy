@@ -1,0 +1,537 @@
+/* Шапка сайта */
+.header {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.header_link {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+.nav_link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000;
+    margin-right: 30px;
+}
+.nav_link:nth-child(3) {
+    margin-right: 0px;
+}
+.nav_link:hover {
+    border-bottom: 2px solid #68B738;
+}
+.burger {
+    display: none;
+}
+.burger_menu {
+    display: none;
+}
+
+/* Секция "Подбор программы" */
+
+.section_form {
+    width: 100%;
+}
+.form_container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.form_main_title {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 60px;   
+}
+.form_main_subtitle {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+.personal_data {
+    display: flex;
+    justify-content: space-between;
+}
+.basic_data {
+    width: 569px;
+}
+.to_do_data {
+    width: 569px;
+    border: 1px solid #E7E7E7;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+.data_title {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #444444;
+    margin-right: 13px;
+}
+.data_title_choice {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #444444;
+    display: flex;
+    align-items: center;
+}
+.choice {
+    margin-right: 15px;
+}
+.to_do_inf {
+    padding: 15px 28px;
+}
+.basic_data_name {
+    display: flex;
+    align-items: center;
+}
+.basic_data_weight {
+    display: flex;
+    align-items: center;
+}
+.basic_data_age {
+    display: flex;
+    align-items: center;
+}
+.name_input {   
+    width: 95%;
+    height: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.weight_input {
+    width: 90%;
+    height: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.age_input {
+    width: 80%;
+    height: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Контактные данные(влдельца кота) */
+
+.contact_title {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    margin-right: 40px;
+    max-width: 512px;
+}
+.contact_form {
+    display: flex;
+    justify-content: space-between;
+}
+.contact_email {
+    display: flex;
+    align-items: center;
+    max-width: 569px;
+}
+.contact_subtitle {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #444444;
+    margin-right: 20px;
+}
+.input_contact {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 30px;
+    width: 390px;
+}
+.contact_phone {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    max-width: 569px;
+}
+
+/* Комментарий */
+
+.comment_title {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+}
+.input_comment {
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    line-height: 30px;
+    color: #444444;
+}
+/* Дополнительно */
+.checkbox_additionally {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.additionally_title {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+}
+
+/* Отпрвака формы */
+
+.data_submit {
+    display: flex;
+    margin-top: 25px;
+}
+.btn {
+    width: 568px;
+    height: 52px;
+    border: none;
+    background-color: #68B738;
+    color: #fff;
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 0px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-right: 80px;
+}
+.btn:active {
+    color: #333;
+}
+.type_text {
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+/* Map */
+
+.section_map {
+    width: 100%;
+}
+.maps {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+.map_address {
+    max-width: 1220px;
+    height: 200px;
+    background-color: #FFFFFF;
+}
+.address_padding {
+    padding: 55px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title_address {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #111111;
+}
+.exact_address {
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #444444;
+}
+.address_city {
+    font-family: 'Arial';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #444444;
+}
+
+/* Подвал сайта */
+
+.section_footer {
+    width: 100%;
+    background-color: #F2F2F2;
+}
+.footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 55px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer_link {
+    display: flex;
+    align-items: center;
+}
+.link_network {
+    margin-right: 20px;
+}
+.link_network:nth-child(3) {
+    margin-right: 0px;
+}
+
+/* Медиа запросы(изменение экрана) */
+
+@media (max-width: 1200px) {
+    .header_link {
+        max-width: 95%;
+    }
+    .form_container {
+        max-width: 95%;
+    }
+    .footer {
+        max-width: 95%;
+    }
+    .personal_data {
+        flex-direction: column;
+    }
+
+}
+@media (max-width: 1050px) {
+    .contact_form {
+        flex-direction: column;
+    }
+}
+@media (max-width: 815px) {
+    .nav {
+        display: none;
+    }
+    .burger {
+        display: block;
+        width: 24px;
+        height: 16px;
+        cursor: pointer;
+    }
+    .burger_line {
+        width: 24px;
+        height: 2px;
+        background-color: #000;
+        border-radius: 2px;
+        transition: .3s all linear;
+    }
+    .burger_line-first {
+        transform: translateY(20%);
+    }
+    .burger_line-two {
+        transform: translateY(218%);
+    }
+    .burger_line-three {
+        transform: translateY(150%);
+    }
+    .burger_line-fourth {
+        transform: translateY(390%);
+    }
+    .burger_menu_active {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        background-color: transparent;
+        transform: translateX(0px);
+    }
+    .burger_container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+    .burger_body {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        padding-top: 70px;
+    }
+    .nav_link {
+        color: black;
+        display: block;
+    }
+    .nav_items {
+        padding-left: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .nav_items .nav_link {
+        width: 175px;
+        margin-right: 0px;
+        padding-top: 15px;
+    }
+    .nav_items .nav_link:nth-child(1) {
+        padding-top: 0px;
+    }
+    .burger_menu_close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 24px;
+        height: 16px;
+        cursor: pointer;
+    }
+    .burger_line_close {
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+    }
+    .burger_line_one {
+        transform: translateY(45%) rotate(45deg);
+    }
+    .burger_line_last {
+        transform: translateY(-45%) rotate(-45deg);
+    }
+}
+@media(max-width: 600px) {
+    .basic_data {
+        max-width: 100%;
+    }
+    .to_do_data {
+        max-width: 100%;
+    }
+}
+@media (max-width: 570px) {
+    .title_address {
+        font-family: 'Oswald';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .exact_address {
+        font-family: 'Arial';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .address_city {
+        font-family: 'Arial';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+@media (max-width: 520px) {
+    .footer {
+        flex-direction: column;
+    }
+    .footer_logo {
+        margin-bottom: 35px;
+    }
+    .footer_link {
+        margin-bottom: 35px;
+    }
+    .form_main_title {
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 36px;
+    }
+    .form_main_subtitle {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .data_title {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .data_title_choice {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .to_do_data {
+        height: 150px;
+    }
+    .contact_title {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 26px;
+    }
+    .contact_subtitle {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .comment_title {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 26px;
+    }
+    .additionally_title {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 26px;
+    }
+    .btn {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        max-width: 100%;
+    }
+    .type_text {
+        text-align: center;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .data_submit {
+        flex-direction: column;
+    }
+    .address_padding {
+        padding: 55px 0px;
+    }
+    .map_address {
+        height: 150px;
+    }
+}
+@media (max-width: 480px) {
+    .address_padding {
+        padding: 10px 10px;
+    }
+}
+@media (max-width: 405px) {
+    .address_padding {
+        flex-wrap: wrap;
+    }
+    .title_address {
+        margin-right: 15px;
+    }
+    .map_address {
+        height: 200px;
+    }
+}
+@media (max-width: 390px) {
+    .logo_img {
+        width: 85%;
+    }
+    .burger_container {
+        width: 100%;
+    }
+    .burger_line-two {
+        transform: translateY(280%);
+    }
+    .burger_line-three {
+        transform: translateY(143%);
+    }
+}
