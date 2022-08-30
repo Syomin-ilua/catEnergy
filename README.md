@@ -1,9 +1,8 @@
-# CatEnergy - проект
+# CatEnergy - проект(сайт)
 ## Проект выполнил - Сёмин Илья
 
   В проекте используются технологии:
   - HTML
   - CSS
-  - Less
-  - Bootstrap v4
+  - Normalize.css
   - JavaScript
