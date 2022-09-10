@@ -38,6 +38,7 @@
 
 .section_form {
     width: 100%;
+    margin-bottom: 50px;
 }
 .form_container {
     max-width: 1200px;
@@ -231,12 +232,16 @@
     margin: 0 auto;
 }
 .map_address {
-    max-width: 1220px;
-    height: 200px;
+    width: 450px;
+    height: 170px;
     background-color: #FFFFFF;
+    position: absolute;
+    z-index: 1;
+    margin-left: 60px;
+    margin-top: 126px;
 }
 .address_padding {
-    padding: 55px 0px;
+    padding: 37px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -244,7 +249,7 @@
 .title_address {
     font-family: 'Oswald';
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 21px;
     text-transform: uppercase;
     color: #111111;
@@ -252,14 +257,14 @@
 .exact_address {
     font-family: 'Arial';
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     color: #444444;
 }
 .address_city {
     font-family: 'Arial';
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     color: #444444;
 }
@@ -268,7 +273,6 @@
 
 .section_footer {
     width: 100%;
-    background-color: #F2F2F2;
 }
 .footer {
     max-width: 1200px;
@@ -305,7 +309,17 @@
     .personal_data {
         flex-direction: column;
     }
-
+    .map_address {
+        width: 100%;
+        position: relative;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .section_form {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 @media (max-width: 1050px) {
     .contact_form {
@@ -429,6 +443,9 @@
         font-size: 14px;
         line-height: 20px;
     }
+    .section_form {
+        width: 100%;
+    }
 }
 @media (max-width: 520px) {
     .footer {
@@ -499,10 +516,10 @@
         flex-direction: column;
     }
     .address_padding {
-        padding: 55px 0px;
+        padding: 0px 15px;
     }
     .map_address {
-        height: 150px;
+        height: 105px;
     }
 }
 @media (max-width: 480px) {
@@ -517,9 +534,6 @@
     .title_address {
         margin-right: 15px;
     }
-    .map_address {
-        height: 200px;
-    }
 }
 @media (max-width: 390px) {
     .logo_img {
@@ -533,5 +547,20 @@
     }
     .burger_line-three {
         transform: translateY(143%);
+    }
+    .title_address {
+        font-size: 14px;
+    }
+    .exact_address {
+        font-size: 11px;
+    }
+    .address_city {
+        font-size: 11px;
+    }
+    .address_padding {
+        padding: 10px 5px;
+    }
+    .map_address {
+        height: 127px;
     }
 }

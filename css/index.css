@@ -18,14 +18,14 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
-    color: #000;
+    color: #fff;
     margin-right: 30px;
 }
 .nav_link:nth-child(3) {
     margin-right: 0px;
 }
 .nav_link:hover {
-    border-bottom: 2px solid #68B738;
+    border-bottom: 2px solid #fff;
 }
 .burger {
     display: none;
@@ -74,11 +74,30 @@
 .button_link:active {
     color: #333;
 }
-
+.section_img {
+    position: relative;
+    right: 95px;
+}
+.index-desktop {
+    background-image: url(/img/index-desktop.jpg);
+    background-color: #63a73a;
+    background-position: 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    width: 50%;
+    min-height: 600px;
+    top: 0;
+    right: 0;
+    left: inherit;
+    position: absolute;
+    z-index: -1;
+}
 /* Cекция 1 "Каталог" */
 
 .section_catalog {
     width: 100%;
+    margin-top: 30px;
 }
 .catalog_info {
     max-width: 1200px;
@@ -139,6 +158,12 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
+}
+.link_setting:hover {
+    color: #333;
+}
+.link_setting:active {
+    color: rgb(97, 97, 97);
 }
 .catalog_weight_gain {
     max-width: 570px;
@@ -366,19 +391,24 @@
     margin: 0 auto;
 }
 .map_address {
-    max-width: 1220px;
-    height: 200px;
+    width: 450px;
+    height: 170px;
     background-color: #FFFFFF;
+    position: absolute;
+    z-index: 1;
+    margin-left: 60px;
+    margin-top: 126px;
 }
 .address_padding {
-    padding: 55px 60px;
+    padding: 37px 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .title_address {
     font-family: 'Oswald';
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 21px;
     text-transform: uppercase;
     color: #111111;
@@ -386,14 +416,14 @@
 .exact_address {
     font-family: 'Arial';
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     color: #444444;
 }
 .address_city {
     font-family: 'Arial';
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     color: #444444;
 }
@@ -402,7 +432,6 @@
 
 .section_footer {
     width: 100%;
-    background-color: #F2F2F2;
 }
 .footer {
     max-width: 1200px;
@@ -441,6 +470,13 @@
     }
     .example {
         max-width: 95%;
+    }
+    .map_address {
+        width: 100%;
+        position: relative;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
 }
 
@@ -482,6 +518,16 @@
     }
     .section_img {
         margin: 0 auto;
+        right: 0px;
+    }
+    .nav_link {
+        color: #000;
+    }
+    .nav_link:hover {
+        border-bottom: 2px solid #68B738;
+    }
+    .index-desktop {
+        display: none;
     }
     .section_img img {
         width: 100%;
@@ -548,9 +594,18 @@
         background-color: #fff;
         padding-top: 70px;
     }
-    .nav_link {
+    .nav_link_burger {
         color: black;
         display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: 'Oswald';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 45px;
+    }
+    .nav_link_burger:hover {
+        color: #333;
     }
     .nav_items {
         padding-left: 0px;
@@ -623,8 +678,10 @@
 }
 @media (max-width: 480px) {
     .address_padding {
-        flex-direction: column;
-        padding: 10px 10px;
+        padding: 20px 10px;
+    }
+    .map_address {
+        height: 140px;
     }
     .card_subtitle {
         margin-top: 15px;
@@ -765,6 +822,21 @@
         font-weight: 400;
         font-size: 14px;
         line-height: 18px;
+    }
+    .title_address {
+        font-size: 14px;
+    }
+    .exact_address {
+        font-size: 11px;
+    }
+    .address_city {
+        font-size: 11px;
+    }
+    .address_padding {
+        padding: 10px 5px;
+    }
+    .map_address {
+        height: 127px;
     }
 }
 

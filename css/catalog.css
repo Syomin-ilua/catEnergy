@@ -164,8 +164,9 @@
 /* Секция "Дополнительные товары" */
 
 .section_additional_products {
-    margin-top: 75px;
     width: 100%;
+    margin-top: 75px;
+    margin-bottom: 60px;
 }
 .additional {
     max-width: 1200px;
@@ -261,7 +262,7 @@
 .relative_additionale_image_little {
     display: none;
 }
-.relative_additionale_image_mobile {
+.relative_additionale_image_mob {
     display: none;
 }
 .absolute_additionale_image {
@@ -290,19 +291,24 @@
     margin: 0 auto;
 }
 .map_address {
-    max-width: 1220px;
-    height: 200px;
+    width: 450px;
+    height: 170px;
     background-color: #FFFFFF;
+    position: absolute;
+    z-index: 1;
+    margin-left: 60px;
+    margin-top: 126px;
 }
 .address_padding {
-    padding: 55px 60px;
+    padding: 37px 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .title_address {
     font-family: 'Oswald';
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 21px;
     text-transform: uppercase;
     color: #111111;
@@ -310,14 +316,14 @@
 .exact_address {
     font-family: 'Arial';
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     color: #444444;
 }
 .address_city {
     font-family: 'Arial';
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     color: #444444;
 }
@@ -326,7 +332,6 @@
 
 .section_footer {
     width: 100%;
-    background-color: #F2F2F2;
 }
 .footer {
     max-width: 1200px;
@@ -368,6 +373,16 @@
     .products {
         width: 830px;
     }
+    .map_address {
+        width: 100%;
+        position: relative;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .section_additional_products {
+        margin-bottom: 0px;
+    }
 }
 @media(max-width: 1178px) {
     .products {
@@ -395,13 +410,13 @@
         height: 200px;
     }
     .address_padding {
-        padding: 60px 60px;
+        padding: 37px 24px;
     }
     .relative_additionale_image {
         display: none;
     }
     .absolute_additionale_image {
-        margin: 85px 85px;
+        margin: 58px 85px;
     }
     .relative_additionale_image_little {
         display: block;
@@ -409,15 +424,10 @@
         width: 95%;
     }
     .additionale_image_title {
-        margin-top: -153px;
+        margin-top: -130px;
         margin-left: 432px;
     }
 }
-@media (max-width: 865px) {
-    .absolute_additionale_image {
-        margin: 72px 85px;
-    }
-} 
 @media (max-width: 815px) {
     .nav {
         display: none;
@@ -510,11 +520,17 @@
 }
 @media(max-width: 750px) {
     .additionale_image_title {
-        margin-left: 240px;
+        margin-left: 360px;
         margin-top: -128px;
     }
     .absolute_additionale_image {
         margin: 52px 85px;
+    }
+}
+@media(max-width: 700px) {
+    .additionale_image_title {
+        margin-left: 280px;
+        margin-top: -128px;
     }
 }
 @media (max-width: 685px) {
@@ -529,6 +545,10 @@
     }
     .another_order_button {
         width: 100%;
+    }
+    .additional_image {
+        width: 100%;
+        height: 175px;
     }
 }
 @media (max-width: 650px) {
@@ -550,6 +570,19 @@
     .button_order_product {
         margin-bottom: 20px;
     }
+    .additional_image {
+        width: 100%;
+        height: 171px;
+    }
+}
+@media (max-width: 600px) {
+    .absolute_additionale_image {
+        margin: 46px 85px;
+    }
+    .additionale_image_title {
+        margin-left: 240px;
+        margin-top: -115px
+    }
 }
 @media (max-width: 570px) {
     .title_address {
@@ -570,6 +603,12 @@
         font-size: 14px;
         line-height: 20px;
     }
+    .additional_image {
+        height: 152px;
+    }
+    .absolute_additionale_image {
+        margin: 38px 85px;
+    }
 }
 @media (max-width: 565px) {
     .absolute_additionale_image {
@@ -580,7 +619,13 @@
         margin-top: -110px;
     }
     .address_padding {
-        padding: 30px 60px;
+        padding: 25px 17px;
+    }
+    .additional_image {
+        height: 141px;
+    }
+    .map_address {
+        height: 130px;
     }
 }
 @media (max-width: 520px) {
@@ -594,7 +639,7 @@
         margin-bottom: 35px;
     }
     .address_padding {
-        padding: 45px 60px;
+        padding: 10px 14px;
     }
     .additional_image {
         height: 288px;
@@ -602,30 +647,43 @@
     .section_additional_products  {
         margin-bottom: 30px;
     }
-    .relative_additionale_image_mobile {
+    .relative_additionale_image_mob {
         display: block;
+        width: 280px;
+        height: 289px;
+        margin: 0 auto;
+    }
+    .relative_additionale_image_mobile {
         position: absolute;
     }
     .relative_additionale_image_little {
         display: none;
     }
     .absolute_additionale_image {
-        margin: 35px 95px;
+        display: none;
     }
     .additionale_image_title {
-        margin-left: -211px;
-        margin-top: 25px;
+        display: none;
+    }
+    .absolute_additionale_img {
+        position: relative;
+        left: 99px;
+        top: 35px;
+    }
+    .additionale_image_tit {
+        position: relative;
+        top: 80px;
+        text-align: center;
+        color: #FFFFFF;
+        font-family: 'Arial';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
     }
 }
 @media (max-width: 500px) {
     .additionale_image_title {
         width: 700px;
-    }
-}
-@media (max-width: 480px) {
-    .address_padding {
-        flex-direction: column;
-        padding: 10px 10px;
     }
 }
 @media(max-width: 440px) {
@@ -667,6 +725,23 @@
         line-height: 0px;
     }
 }
+@media (max-width: 410px) {
+    .title_address {
+        font-size: 14px;
+    }
+    .exact_address {
+        font-size: 11px;
+    }
+    .address_city {
+        font-size: 11px;
+    }
+    .address_padding {
+        padding: 10px 5px;
+    }
+    .map_address {
+        height: 127px;
+    }
+}
 @media (max-width: 390px) {
     .logo_img {
         width: 85%;
@@ -679,5 +754,20 @@
     }
     .burger_line-three {
         transform: translateY(143%);
+    }
+    .title_address {
+        font-size: 14px;
+    }
+    .exact_address {
+        font-size: 11px;
+    }
+    .address_city {
+        font-size: 11px;
+    }
+    .address_padding {
+        padding: 10px 5px;
+    }
+    .map_address {
+        height: 127px;
     }
 }
