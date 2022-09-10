@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normolize.css"> 
+    <link rel="stylesheet" href="css/form.css">
+    <title>Подбор программы</title>
+</head>
+<body>
+
+     <!-- Шапка сайта -->
+
+     <header class="header">
+        <div class="header_link">
+
+            <div class="logo">
+                <a href="index.html"><img class="logo_img" src="img/logo-img/logoCat.svg" alt="logo"></a>
+            </div>
+
+            <div class="nav">
+                <a class="nav_link" href="index.html">Главная</a>
+                <a class="nav_link" href="catalog.html">Каталог продукции</a>
+                <a class="nav_link" href="form.html">Подбор программы</a>
+            </div>
+
+            <!-- Меню бургер -->
+
+            <div class="burger">
+                <div class="burger_line burger_line-first"></div>
+                <div class="burger_line burger_line-two"></div>
+                <div class="burger_line burger_line-three"></div>
+                <div class="burger_line burger_line-fourth"></div>
+            </div>
+
+            <div class="burger_menu">
+                <div class="burger_container">
+                    <div class="burger_menu_close">
+                        <div class="burger_line_close burger_line_one"></div>
+                        <div class="burger_line_close burger_line_last"></div>
+                    </div>
+                    <div class="burger_body">
+                        <nav class="nav_burger">
+                            <ul class="nav_items">
+                                <a class="nav_link" href="index.html">Главная</a>
+                                <a class="nav_link" href="catalog.html">Каталог продукции</a>
+                                <a class="nav_link" href="form.html">Подбор программы</a>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Секция "Подбор программы" -->
+
+    <section class="section_form">
+        <div class="form_container">
+
+            <h1 class="form_main_title">Подбор программы</h1>
+            <h3 class="form_main_subtitle">Заполните анкету, и мы подберем <br>
+                программу питания для вашего кота</h3>
+
+                <form class="form" action="#" method="POST">
+                    <div class="personal_data">
+
+                        <div class="basic_data">
+                            <div class="basic_data_name">
+                                <p class="data_title">Имя:*</p>
+                                <input class="js_input name_input" type="text" data-validate-field="name" name="name" id="name">
+                            </div>
+                            <div class="basic_data_weight">
+                                <p class="data_title">Вес(кг):*</p>
+                                <input class="js_input weight_input" type="text" name="weight" id="weight">
+                            </div>
+                            <div class="basic_data_age">
+                                <p class="data_title">Возраст(лет):*</p>
+                                <input class="js_input age_input" type="text" name="age" id="age">
+                            </div>
+                        </div>
+
+                        <div class="to_do_data">
+                            <div class="to_do_inf">
+                                <p class="data_title_choice"><input class="choice" name="loss" type="radio" value="weight_loss"> Похудение</p>
+                                <p class="data_title_choice"><input class="choice" name="gain" type="radio" value="weight_gain"> Набор массы</p>
+                                <p class="data_title_choice"><input class="choice" name="additional" type="radio" value="additional_information"> Не знаю (нужен ваш совет)</p>
+                            </div> 
+                        </div>
+
+                    </div>
+
+                    <div class="contant_data">
+                            <h3 class="contact_title">Контактные данные (владельца кота)</h3>
+
+                        <div class="contact_form">
+
+                            <div class="contact_email">
+                                <p class="contact_subtitle">E-mail:*</p>
+                                <input class="js_input js_inputEmail input_contact" data-validate-field="email" name="email" id="email" type="email" placeholder="кuklachev@gmail.com">
+                            </div>
+
+                            <div class="contact_phone">
+                                <p class="contact_subtitle">Телефон:*</p>
+                                <input class="js_input js_inputPhone input_contact" data-validate-field="tel" name="phone" id="phone" type="tel" placeholder="8 (960) 900-60-90">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="comment_data">
+                        <h3 class="comment_title">Комментарий</h3>
+                        <textarea class="js_input input_comment" name="comment" id="comment" cols="30" rows="5" placeholder="Расскажите обо всех повадках кота"></textarea>
+                    </div>
+
+
+                    <div class="additionally_data">
+                        <h3 class="additionally_title">Дополнительно</h3>
+                        <div class="checkbox_additionally">
+                            <p class="data_title_choice"><input class="choice" name="sweetener" id="sweetener" type="checkbox" value="Сахарозаменитель"> Cахарозаменитель</p>
+                            <p class="data_title_choice"><input class="choice" name="water" id="water" type="checkbox" value="Питьевая вода"> Питьевая вода</p>
+                            <p class="data_title_choice"><input class="choice" name="milk" id="milk" type="checkbox" value="Молоко"> Молоко</p>
+                            <p class="data_title_choice"><input class="choice" name="vitamins" id="vitamins" type="checkbox" value="Витамины"> Витамины</p>
+                        </div>
+                    </div>
+
+                    <div class="data_submit">
+                        <button class="btn">Отправить заявку</button>
+                        <p class="type_text">* — Обязательные поля</p>
+                    </div>
+
+                </form>
+
+        </div>
+    </section>
+
+    <!-- Map -->
+
+    <section class="section_map">
+        <div class="maps">
+
+            <div class="map">
+                <div class="map_address">
+
+                    <div class="address_padding">
+                        <div class="address_title">
+                            <h3 class="title_address">приглашаем <br>
+                                к сотрудничеству <br>
+                                дилеров!</h3>
+                        </div>
+        
+                        <div class="address">
+                            <p class="exact_address">ул. Большая 
+                                Конюшенная, д. 19/8</p>
+        
+                                <p class="address_city">Санкт-Петербург</p>
+                        </div>
+                    </div>
+    
+                </div>
+                
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab38e1ec6f6cc2e90c941372c8daf1feebfb91789b33c4c7e8d376b3115276f04&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Подвал страницы -->
+
+    <footer class="section_footer">
+        <div class="footer">
+
+            <div class="footer_logo">
+                <img src="img/logo-img/footer-logo.svg" alt="Cat Energy">
+            </div>
+
+            <div class="footer_link">
+                <a class="link_network"><img src="img/icon-network/icon-vk.svg" alt="VK"></Ф>
+                <a class="link_network"><img src="img/icon-network/icon-inst.svg" alt="INST"></a>
+                <a class="link_network"><img src="img/icon-network/icon-facebook.svg" alt="FACEBOOK"></a>
+
+            </div>
+
+            <div class="footer_logo_html"><img src="img/logo-img/logo_html.svg" alt="HTML Academy"></div>
+
+        </div>
+    </footer>
+
+    <script src="js/just-validate.min.js"></script>
+    <script src="js/form.js"></script>
+    
+</body>
+</html>
