@@ -4,11 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="web icon" href="img/map_logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normolize.css"> 
     <link rel="stylesheet" href="css/form.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=aa5a4e38-6a72-43db-9eed-7bde4e2730db&lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+    ymaps.ready(init);
+    var myMap;
+    function init(){
+        myMap = new ymaps.Map("map", {
+            center: [59.938635, 30.323118],
+            zoom: 20
+        });
+
+        myPlacemark1 = new ymaps.Placemark([59.938635, 30.323118], {}, {
+            iconLayout: 'default#image',
+            iconImageHref: 'img/map_logo.png',
+            iconImageSize: [60, 60],
+        });
+
+        myMap.geoObjects.add(myPlacemark1);
+    }
+    </script>
     <title>Подбор программы</title>
 </head>
 <body>
@@ -22,6 +42,16 @@
                 <a href="index.html"><img class="logo_img" src="img/logo-img/logoCat.svg" alt="logo"></a>
             </div>
 
+            <div class="logo_mobile">
+                <a href="index.html">
+                    <img src="img/logo-mobile.svg" alt="">
+                </a>
+            </div>
+
+            <div class="logo_title_mobile">
+                <img src="img/logo_title_mobile.svg" alt="">
+            </div>
+
             <div class="nav">
                 <a class="nav_link" href="index.html">Главная</a>
                 <a class="nav_link" href="catalog.html">Каталог продукции</a>
@@ -30,32 +60,30 @@
 
             <!-- Меню бургер -->
 
-            <div class="burger">
-                <div class="burger_line burger_line-first"></div>
-                <div class="burger_line burger_line-two"></div>
-                <div class="burger_line burger_line-three"></div>
-                <div class="burger_line burger_line-fourth"></div>
+            <div class="burger__btn">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-
-            <div class="burger_menu">
-                <div class="burger_container">
-                    <div class="burger_menu_close">
-                        <div class="burger_line_close burger_line_one"></div>
-                        <div class="burger_line_close burger_line_last"></div>
-                    </div>
-                    <div class="burger_body">
-                        <nav class="nav_burger">
-                            <ul class="nav_items">
-                                <a class="nav_link" href="index.html">Главная</a>
-                                <a class="nav_link" href="catalog.html">Каталог продукции</a>
-                                <a class="nav_link" href="form.html">Подбор программы</a>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
         </div>
+
+        <div class="burger__menu_wrapper">
+            <div class="burger__menu">
+                <ul class="burger__menu_links">
+                    <li class="menu_link">
+                        <a href="index.html">Главная</a>
+                    </li>
+                    <li class="menu_link">
+                        <a href="catalog.html">Каталог продукции</a>
+                    </li>
+                    <li class="menu_link">
+                        <a href="form.html">Подбор программы</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border_line"></div>
     </header>
 
     <!-- Секция "Подбор программы" -->
@@ -63,69 +91,131 @@
     <section class="section_form">
         <div class="form_container">
 
-            <h1 class="form_main_title">Подбор программы</h1>
-            <h3 class="form_main_subtitle">Заполните анкету, и мы подберем <br>
-                программу питания для вашего кота</h3>
+            <div class="form_main_subtitle_wrap">
+                <h1 class="form_main_title">Подбор программы</h1>
+                <div class="form_main_subtitle_mobile">
+                    <h3 class="form_main_subtitle">Заполните анкету, и мы подберем <br>
+                        программу питания для вашего кота</h3>
+                </div>
+            </div>
 
                 <form class="form" action="#" method="POST">
                     <div class="personal_data">
 
                         <div class="basic_data">
-                            <div class="basic_data_name">
+                            <label class="basic_data_name">
                                 <p class="data_title">Имя:*</p>
-                                <input class="js_input name_input" type="text" data-validate-field="name" name="name" id="name">
-                            </div>
-                            <div class="basic_data_weight">
+                                <input class="js_input name_input" type="text" name="Имя" id="name" placeholder="Барсик">
+                            </label>
+                            <label class="basic_data_weight">
                                 <p class="data_title">Вес(кг):*</p>
-                                <input class="js_input weight_input" type="text" name="weight" id="weight">
-                            </div>
-                            <div class="basic_data_age">
+                                <input class="js_input weight_input" type="number" name="Вес(кг)" id="weight" placeholder="7">
+                            </label>
+                            <label class="basic_data_age">
                                 <p class="data_title">Возраст(лет):*</p>
-                                <input class="js_input age_input" type="text" name="age" id="age">
-                            </div>
+                                <input class="js_input age_input" type="number" name="Возраст" id="age" placeholder="7">
+                            </label>
                         </div>
 
-                        <div class="to_do_data">
-                            <div class="to_do_inf">
-                                <p class="data_title_choice"><input class="choice" name="loss" type="radio" value="weight_loss"> Похудение</p>
-                                <p class="data_title_choice"><input class="choice" name="gain" type="radio" value="weight_gain"> Набор массы</p>
-                                <p class="data_title_choice"><input class="choice" name="additional" type="radio" value="additional_information"> Не знаю (нужен ваш совет)</p>
-                            </div> 
+                        <div class="choosing_actions_wrap">
+                            <div class="choosing_actions_wrap_line">
+                                <div class="choosing_actions">
+                                    <label class="choise_wrap">
+                                        <input class="choise" type="radio" id="loss"
+                                        name="Выбор:" value="Похудение">
+                                        <span class="fake"></span>
+                                        <span class="choise_title">Похудение</span>
+                                    </label>
+    
+                                    <label class="choise_wrap">
+                                        <input class="choise" type="radio" id="gain"
+                                        name="Выбор:" value="Набор массы">
+                                        <span class="fake"></span>
+                                        <span class="choise_title">Набор массы</sp>
+                                    </label>
+    
+                                    <label class="choise_wrap">
+                                        <input class="choise" type="radio" id="noChoise"
+                                        name="Выбор:" value="Не знаю(нужен ваш совет)">
+                                        <span class="fake"></span>
+                                        <span class="choise_title">Не знаю(нужен ваш совет)</span>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
 
                     <div class="contant_data">
-                            <h3 class="contact_title">Контактные данные (владельца кота)</h3>
+                        <div class="contact__title_wrap">
+                            <div class="title_line_left"></div>
+                            <div class="title_wrap">
+                                <h3 class="contact_title">Контактные данные (владельца кота)</h3>
+                            </div>
+                            <div class="title_line"></div>
+                        </div>
 
                         <div class="contact_form">
 
-                            <div class="contact_email">
-                                <p class="contact_subtitle">E-mail:*</p>
-                                <input class="js_input js_inputEmail input_contact" data-validate-field="email" name="email" id="email" type="email" placeholder="кuklachev@gmail.com">
-                            </div>
+                            <label class="contact_email">
+                                <div class="contact_email_wrap">
+                                    <p class="contact_subtitle">E-mail:*</p>
+                                </div>
+                                <input class="js_input js_inputEmail input_contact" name="E-mail" id="email" type="email" placeholder="кuklachev@gmail.com">
+                                <img class="contact_img" src="img/icon_email.svg" alt="">
+                            </label>
 
-                            <div class="contact_phone">
+                            <label class="contact_phone">
                                 <p class="contact_subtitle">Телефон:*</p>
-                                <input class="js_input js_inputPhone input_contact" data-validate-field="tel" name="phone" id="phone" type="tel" placeholder="8 (960) 900-60-90">
-                            </div>
+                                <input class="js_input js_inputPhone input_contact" name="Телефон" id="phone" type="tel" placeholder="8 (960) 900-60-90">
+                                <img class="contact_img" src="img/icon_phone.svg" alt="">
+                            </label>
 
                         </div>
                     </div>
 
-                    <div class="comment_data">
-                        <h3 class="comment_title">Комментарий</h3>
-                        <textarea class="js_input input_comment" name="comment" id="comment" cols="30" rows="5" placeholder="Расскажите обо всех повадках кота"></textarea>
-                    </div>
+                    <label class="comment_data">
+                        <div class="contact__title_wrap">
+                            <div class="title_line_left_comment"></div>
+                            <h3 class="comment_title">Комментарий</h3>
+                            <div class="title_line_comment"></div>  
+                        </div>
+                        <div class="textarea">
+                            <textarea class="js_input input_comment" name="Комментарий" id="comment" cols="30" rows="5" placeholder="Расскажите обо всех повадках кота"></textarea>
+                        </div>
+                    </label>
 
 
                     <div class="additionally_data">
-                        <h3 class="additionally_title">Дополнительно</h3>
+                        <div class="contact__title_wrap">
+                            <div class="title_line_left_comment"></div>
+                            <h3 class="additionally_title">Дополнительно</h3>
+                            <div class="title_line_additionally"></div> 
+                        </div>
                         <div class="checkbox_additionally">
-                            <p class="data_title_choice"><input class="choice" name="sweetener" id="sweetener" type="checkbox" value="Сахарозаменитель"> Cахарозаменитель</p>
-                            <p class="data_title_choice"><input class="choice" name="water" id="water" type="checkbox" value="Питьевая вода"> Питьевая вода</p>
-                            <p class="data_title_choice"><input class="choice" name="milk" id="milk" type="checkbox" value="Молоко"> Молоко</p>
-                            <p class="data_title_choice"><input class="choice" name="vitamins" id="vitamins" type="checkbox" value="Витамины"> Витамины</p>
+                            <label class="choise_checkbox">
+                                <input class="choice" name="Сахарозаменитель" id="sweetener" type="checkbox" value="Сахарозаменитель">
+                                <span class="fake_checkbox"></span>
+                                <span class="choise_title_checkbox">Сахарозаменитель</span>
+                            </label>
+
+                            <label class="choise_checkbox">
+                                <input class="choice" name="Питьевая вода" id="water" type="checkbox" value="Питьевая вода">
+                                <span class="fake_checkbox"></span>
+                                <span class="choise_title_checkbox">Питьевая вода</span>
+                            </label>
+
+                            <label class="choise_checkbox">
+                                <input class="choice" name="Молоко" id="milk" type="checkbox" value="Молоко">
+                                <span class="fake_checkbox"></span>
+                                <span class="choise_title_checkbox">Молоко</span>
+                            </label>
+
+                            <label class="choise_checkbox">
+                                <input class="choice" name="Витамины" id="vitamins" type="checkbox" value="Витамины">
+                                <span class="fake_checkbox"></span>
+                                <span class="choise_title_checkbox">Витамины</span>
+                            </label>
                         </div>
                     </div>
 
@@ -149,8 +239,8 @@
 
                     <div class="address_padding">
                         <div class="address_title">
-                            <h3 class="title_address">приглашаем <br>
-                                к сотрудничеству <br>
+                            <h3 class="title_address">приглашаем 
+                                к сотрудничеству
                                 дилеров!</h3>
                         </div>
         
@@ -164,7 +254,7 @@
     
                 </div>
                 
-                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab38e1ec6f6cc2e90c941372c8daf1feebfb91789b33c4c7e8d376b3115276f04&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                <div id="map" class="map_add" style="width: 100%; height: 400px"></div>
             </div>
 
         </div>
@@ -183,7 +273,6 @@
                 <a class="link_network"><img src="img/icon-network/icon-vk.svg" alt="VK"></Ф>
                 <a class="link_network"><img src="img/icon-network/icon-inst.svg" alt="INST"></a>
                 <a class="link_network"><img src="img/icon-network/icon-facebook.svg" alt="FACEBOOK"></a>
-
             </div>
 
             <div class="footer_logo_html"><img src="img/logo-img/logo_html.svg" alt="HTML Academy"></div>
@@ -191,6 +280,22 @@
         </div>
     </footer>
 
+
+    <div class="succes__modal_wrapper">
+        <div class="modal__close_button">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="succes__modal_body">
+            <h2 class="modal__title">
+                Ваша анкета отправлена. Мы свяжемся с вами!
+            </h2>
+        </div>
+    </div>
+
+    <div class="modal__overlay"></div>
+
+    <script src="js/inputmask.min.js"></script>
     <script src="js/just-validate.min.js"></script>
     <script src="js/form.js"></script>
     

@@ -4,11 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="web icon" href="img/map_logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normolize.css"> 
     <link rel="stylesheet" href="css/index.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=aa5a4e38-6a72-43db-9eed-7bde4e2730db&lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+    ymaps.ready(init);
+    var myMap;
+    function init(){
+        myMap = new ymaps.Map("map", {
+            center: [59.938635, 30.323118],
+            zoom: 20
+        });
+
+        myPlacemark1 = new ymaps.Placemark([59.938635, 30.323118], {}, {
+            iconLayout: 'default#image',
+            iconImageHref: 'img/map_logo.png',
+            iconImageSize: [60, 60],
+        });
+
+        myMap.geoObjects.add(myPlacemark1);
+    }
+    </script>
     <title>Cat Energy - функциональное питание для котов</title>
 </head>
 <body>
@@ -23,6 +43,16 @@
                 <a href="index.html"><img class="logo_img" src="img/logo-img/logoCat.svg" alt="logo"></a>
             </div>
 
+            <div class="logo_mobile">
+                <a href="index.html">
+                    <img src="img/logo-mobile.svg" alt="">
+                </a>
+            </div>
+
+            <div class="logo_title_mobile">
+                <img src="img/logo_title_mobile.svg" alt="">
+            </div>
+
             <div class="nav">
                 <a class="nav_link" href="index.html">Главная</a>
                 <a class="nav_link" href="catalog.html">Каталог продукции</a>
@@ -31,44 +61,48 @@
 
             <!-- Меню бургер -->
 
-            <div class="burger">
-                <div class="burger_line burger_line-first"></div>
-                <div class="burger_line burger_line-two"></div>
-                <div class="burger_line burger_line-three"></div>
-                <div class="burger_line burger_line-fourth"></div>
+            <div class="burger__btn">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
 
-            <div class="burger_menu">
-                <div class="burger_container">
-                    <div class="burger_menu_close">
-                        <div class="burger_line_close burger_line_one"></div>
-                        <div class="burger_line_close burger_line_last"></div>
-                    </div>
-                    <div class="burger_body">
-                        <nav class="nav_burger">
-                            <ul class="nav_items">
-                                <a class="nav_link_burger" href="index.html">Главная</a>
-                                <a class="nav_link_burger" href="catalog.html">Каталог продукции</a>
-                                <a class="nav_link_burger" href="form.html">Подбор программы</a>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
             <div class="index-desktop">
 
             </div>
         </div>
+
+        <div class="burger__menu_wrapper">
+            <div class="burger__menu">
+                <ul class="burger__menu_links">
+                    <li class="menu_link">
+                        <a href="index.html">Главная</a>
+                    </li>
+                    <li class="menu_link">
+                        <a href="catalog.html">Каталог продукции</a>
+                    </li>
+                    <li class="menu_link">
+                        <a href="form.html">Подбор программы</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border_line"></div>
     </header>
 
     <!-- Внутренняя секция шапки -->
 
     <main class="main">
+        <div class="mobile_image_cat">
+            <img src="img/index-desktop.jpg" alt="">
+        </div>
         <div class="section_header">
 
             <div class="section_info">
                 <h1 class="header_title">Функциональное <br> питание для котов</h1>
                 <h3 class="header_subtitle">Занялся собой? Займись котом!</h3>
+                <div class="mobile_image_can"></div>
                 <div class="button_wrap">
                     <a class="button_link" href="form.html">Подобрать программу</a>
                 </div>
@@ -104,7 +138,7 @@
                     </div>
     
                     <div class="catalof_link_settings">
-                        <a class="link_setting" href="#">Каталог Slim &rarr;</a>
+                        <button class="link_setting">Каталог Slim <img class="bnt_arrow" src="img/arrow.svg" alt=""></button>
                     </div>
 
                 </div>
@@ -124,12 +158,12 @@
                         <h1 class="catalog_title">Набор массы</h1>
                     </div>
     
-                    <div class="catalog_information">
+                    <div class="catalog_information catalog_information_gain">
                         <p class="catalog_info_subtitle">Заработать авторитет среди дворовых котов и даже Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!</p>
                     </div>
     
-                    <div class="catalof_link_settings">
-                        <a class="link_setting" href="#">Каталог Pro &rarr;</a>
+                    <div class="catalof_link_settings catalof_link_settings_gain">
+                        <button class="link_setting">Каталог Pro <img class="bnt_arrow" src="img/arrow.svg" alt=""></button>
                     </div>
 
                 </div>
@@ -149,31 +183,43 @@
             <div class="work_cards">
 
                 <div class="work_card">
-                    <div class="square_item">
-                        <img src="img/icon-work/icon_leaf.svg" alt="Icon Leaf">
+                    <div class="work_background work_background_one"></div>
+                    <div class="work_card_wrap">
+                        <div class="square_item">
+                            <img src="img/icon-work/icon_leaf.svg" alt="Icon Leaf">
+                        </div>
+                            <p class="card_subtitle">Функциональное питание содержит только полезные питательные вещества.</p>
                     </div>
-                        <p class="card_subtitle">Функциональное питание содержит только полезные питательные вещества.</p>
                 </div>
 
                 <div class="work_card">
-                    <div class="square_item">
-                        <img src="img/icon-work/icon_tub.svg" alt="Icon Tub">
+                    <div class="work_background work_background_two"></div>
+                    <div class="work_card_wrap">
+                        <div class="square_item">
+                            <img src="img/icon-work/icon_tub.svg" alt="Icon Tub">
+                        </div>
+                            <p class="card_subtitle">Выпускается в виде порошка, который нужно лишь залить кипятком и готово.</p>
                     </div>
-                        <p class="card_subtitle">Выпускается в виде порошка, который нужно лишь залить кипятком и готово.</p>
                 </div>
 
                 <div class="work_card">
-                    <div class="square_item">
-                        <img src="img/icon-work/icon_eat.svg" alt="Icon Eat">
+                    <div class="work_background work_background_three"></div>
+                    <div class="work_card_wrap">
+                        <div class="square_item">
+                            <img src="img/icon-work/icon_eat.svg" alt="Icon Eat">
+                        </div>
+                            <p class="card_subtitle">Замените один-два приема обычной еды на наше функциональное питание.</p>
                     </div>
-                        <p class="card_subtitle">Замените один-два приема обычной еды на наше функциональное питание.</p>
                 </div>
 
                 <div class="work_card">
-                    <div class="square_item">
-                        <img src="img/icon-work/icon_alarm.svg" alt="Icon Alarm">
+                    <div class="work_background work_background_four"></div>
+                    <div class="work_card_wrap">
+                        <div class="square_item">
+                            <img src="img/icon-work/icon_alarm.svg" alt="Icon Alarm">
+                        </div>
+                            <p class="card_subtitle">Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!</p>
                     </div>
-                        <p class="card_subtitle">Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!</p>
                 </div>
                 
             </div>
@@ -185,50 +231,49 @@
 
     <section class="section_example">
         <div class="example">
-
+            <div class="example_background"></div>
             <div class="example_info">
                 <h1 class="example_title">Живой пример</h1>
                 <p class="example_subtitle">Борис сбросил 5 кг за 2 месяца, просто заменив свой 
                     обычный корм на Cat Energy Slim. Отличный результат 
                     без изнуряющих тренировок! При этом он не менял своих 
                     привычек и по-прежнему спит по 16 часов в день. </p>
-                    <div class="example_weightTime">
-
-                        <div class="example_weights">
-                            <div class="example_weight">
-                                <h1 class="example_weight_title">5</h1>
-                                <p class="example_weight_subtitle">снижение веса</p>
+                    <div class="example_info_submain">
+                        <div class="example_weightTime">
+                            <div class="example_weights">
+                                <div class="example_weight">
+                                    <h1 class="example_weight_title">5 КГ</h1>
+                                    <p class="example_weight_subtitle">снижение веса</p>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="example_times">
-                            <div class="example_time">
-                                <h1 class="example_time_title">60 дней</h1>
-                                <p class="example_time_subtitle">затрачено времени</p>
+    
+                            <div class="example_times">
+                                <div class="example_time">
+                                    <h1 class="example_time_title">60 дней</h1>
+                                    <p class="example_time_subtitle">затрачено времени</p>
+                                </div>
                             </div>
+    
                         </div>
-
+    
+                        <div class="expenses">
+                            <h2 class="expenses_title">Затраты на питание:</h2>
+                            <p class="expenses_price">15 000 руб.</p> 
+                        </div>
                     </div>
-
-                    <div class="expenses">
-                        <h2 class="expenses_title">Затраты на питание:</h2>
-                        <p class="expenses_price">15 000 руб.</p> 
-                    </div>
-
             </div>
 
             <div class="example_img">
-
                     <img class="cat_before cat_before_active" src="img/after-before-cat-img/before-cat.png" alt="Before Cat">
-
                     <img class="cat_after" src="img/after-before-cat-img/after-cat.png" alt="After Cat">
-            
-                <p class="after_title">Было</p>
-                <div class="buttons_change_cat">
-                    <div class="before_button before_button_active"></div>
-                    <div class="after_button"></div>
+                <div class="states_cat">
+                    <p class="after_title">Было</p>
+                    <div class="buttons_change_cat">
+                        <div class="before_button before_button_active"></div>
+                        <div class="after_button"></div>
+                    </div>
+                    <p class="before_title">Стало</p>
                 </div>
-                <p class="before_title">Стало</p>
 
             </div>
 
@@ -245,8 +290,8 @@
 
                     <div class="address_padding">
                         <div class="address_title">
-                            <h3 class="title_address">приглашаем <br>
-                                к сотрудничеству <br>
+                            <h3 class="title_address">приглашаем 
+                                к сотрудничеству
                                 дилеров!</h3>
                         </div>
         
@@ -259,8 +304,8 @@
                     </div>
     
                 </div>
-
-                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab38e1ec6f6cc2e90c941372c8daf1feebfb91789b33c4c7e8d376b3115276f04&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                
+                <div id="map" class="map_add" style="width: 100%; height: 400px"></div>
             </div>
 
         </div>

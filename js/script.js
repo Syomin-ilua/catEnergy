@@ -1,21 +1,18 @@
-// Переменные для меню-бургера и инициализация поведения
+// Бургер меню
 
-const burger = document.querySelector('.burger');
-const burgerMenu = document.querySelector('.burger_menu');
-const burgerMenuClose = document.querySelector('.burger_menu_close');
+const burgerBtn = document.querySelector('.burger__btn');
+const burgerMenu = document.querySelector('.burger__menu_wrapper');
 
-burger.addEventListener('click', function(e) {
-    e.preventDefault();
-    burgerMenu.classList.add('burger_menu_active');
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${window.scrollY}px`;
-})
-burgerMenuClose.addEventListener('click', function(e){
-    e.preventDefault();
-    burgerMenu.classList.remove('burger_menu_active');
-    document.body.style.position = '';
-    document.body.style.top = '';
-})
+burgerBtn.addEventListener('click', function(e) {
+    burgerBtn.classList.toggle('active');
+    burgerMenu.classList.toggle('active');
+
+    if(burgerBtn.classList.contains('active')) {
+        burgerMenu.style.maxHeight = '171px';
+    } else {
+        burgerMenu.style.maxHeight = 0;
+    }
+});
 
 // Переменные для смены "До" и "После" изображения кота и инициализация поведения
 

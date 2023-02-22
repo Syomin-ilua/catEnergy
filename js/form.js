@@ -1,64 +1,112 @@
-// Переменные для меню-бургера и инициализация поведения
+// Бургер меню
+const burgerBtn = document.querySelector('.burger__btn');
+const burgerMenu = document.querySelector('.burger__menu_wrapper');
 
-const burger = document.querySelector('.burger');
-const burgerMenu = document.querySelector('.burger_menu');
-const burgerMenuClose = document.querySelector('.burger_menu_close');
+burgerBtn.addEventListener('click', function(e) {
+    burgerBtn.classList.toggle('active');
+    burgerMenu.classList.toggle('active');
 
-burger.addEventListener('click', function(e) {
-    e.preventDefault();
-    burgerMenu.classList.add('burger_menu_active');
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${window.scrollY}px`;
-})
-burgerMenuClose.addEventListener('click', function(e){
-    e.preventDefault();
-    burgerMenu.classList.remove('burger_menu_active');
-    document.body.style.position = '';
-    document.body.style.top = '';
-})
+    if(burgerBtn.classList.contains('active')) {
+        burgerMenu.style.maxHeight = burgerMenu.scrollHeight + 'px';
+    } else {
+        burgerMenu.style.maxHeight = 0;
+    }
+});
 
+// Маскирую телефон
+
+let tel = document.querySelector('.js_inputPhone');
+let inputMask = new Inputmask('+7 (999) 999-99-99');
+inputMask.mask(tel);
 
 // Валидация формы
 
-new window.JustValidate('.form', {
-    rules: {
-        tel: {
-            required: true
-        }
-    },
-    messages: {
-        name: {
-            required: 'Введите имя',
-            minLength: 'Введите 3 и более символов',
-            maxLength: 'Запрещено вводить более 15 симоволов'
-        },
-        email: {
-            email: 'Введите корректный email',
-            required: 'Введите email'
-        },
-        tel: {
-            required: 'Введите телефон',
-            function: 'Здесь должно быть не менее 10 симоволов'
-        }
-    },
-    submitHandler: function(thisForm) {
-        let formData = new FormData(thisForm);
-        let xhr = new XMLHttpRequest();
+const modalWraper = document.querySelector('.succes__modal_wrapper');
+const modalOverlay = document.querySelector('.modal__overlay');
 
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-              if (xhr.status === 200) {
-                console.log('Отправлено');
-              }
-            }
-          }
+const modalCloseButton = document.querySelector('.modal__close_button');
 
-        xhr.open('POST', 'mail.php', true);
-        xhr.send(formData);
-        
-        thisForm.reset();
+const form = document.querySelector('.form');
+
+let validation = new JustValidate('.form');
+
+validation
+.addField('.name_input', [
+    {
+        rule: 'minLength',
+        value: 3,
+    },
+    {
+        rule: 'maxLength',
+        value: 30,
+    },
+    {
+        rule: 'required',
+        value: 'true',
     }
-})
+])
+.addField('.weight_input', [
+    {
+        rule: 'required',
+        value: 'true',
+    }
+])
+.addField('.age_input', [
+    {
+        rule: 'required',
+        value: 'true',
+    }
+])
+.addField('.js_inputEmail', [
+    {
+        rule: 'required',
+        value: 'true',
+    },
+    {
+        rule: 'email',
+        value: 'true',
+    }
+])
+.addField('.js_inputPhone', [
+    {
+        rule: 'required',
+        value: 'true',
+    },
+    {
+        rule: 'tel',
+        validator: function() {
+            const phone = tel.inputmask.unmaskedvalue();
+            return phone.length === 10;
+          },
+    }
+])
+.addField('.input_comment', [
+    {
+        rule: 'required',
+        value: 'true',
+    }
+]).onSuccess((event) => {
+    
+    modalOverlay.classList.add('active');
+    modalWraper.classList.add('active');
+
+    form.reset();
+
+});
+
+modalCloseButton.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    modalOverlay.classList.remove('active');
+    modalWraper.classList.remove('active');
+});
+
+modalOverlay.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    modalOverlay.classList.remove('active');
+    modalWraper.classList.remove('active');
+});
 
 
 
